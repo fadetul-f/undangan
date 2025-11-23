@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Istiqomah & Faruq Wedding</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Sacramento&family=Tangerine:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+    <section class="w-full min-h-screen bg-ivory overflow-hidden flex flex-col justify-center items-center px-6 text-center relative">
+
+        <!-- Corner Left-Top -->
+        <img src="./images/corner.png"
+        alt=""
+        class="absolute top-0 left-0 
+               -translate-x-1 -translate-y-6
+               w-36 md:w-48 opacity-10
+               pointer-events-none select-none
+               animate-fadeInUp [animation-delay:0.1s]" />
+
+        <!-- Corner Right-Bottom -->
+        <img src="./images/corner.png"
+            alt=""
+            class="absolute bottom-0 right-0 translate-x-2 translate-y-4
+                    w-40 md:w-48 opacity-10 rotate-180 pointer-events-none select-none
+                    animate-fadeInUp [animation-delay:0.2s]" />
+
+        <!-- Overlay dekor -->
+        <div class="absolute inset-0 bg-gradient-to-b from-caramel/10 to-transparent pointer-events-none"></div>
+
+        <img src="./images/couple.png" alt="Foto Kartun Pasangan" class="w-full max-w-md h-auto mx-auto rounded-2xl">
+        <!-- Nama Pengantin -->
+        <h1 class="text-4xl font-[Cormorant] sacramento-regular mb-1 mt-10 animate-fadeInUp">
+            Istiqomah &amp; Faruq
+        </h1>
+
+        <p class="text-sm text-neutral-700 mb-5 animate-fadeInUp [animation-delay:0.15s]">
+            Akan melangsungkan pernikahan pada <br>7 Desember 2025
+        </p>
+
+        <div class="w-12 h-1 bg-amber-700/60 mx-auto rounded-full mb-3"></div>
+
+        <!-- Input Nama Tamu -->
+        <div class="w-full max-w-xs sm:max-w-sm mx-auto rounded-2xl
+            bg-white/60 backdrop-blur-xl border border-amber-300
+            shadow-[0_4px_20px_rgba(0,0,0,0.05)]
+            px-6 py-6 space-y-4 animate-fadeInUp [animation-delay:0.3s]">
+            <label for="guestName" class="block text-espresso text-xs font-medium tracking-wide">
+            Kepada Yth.
+            </label>
+
+            <input id="guestName" 
+            type="text" 
+            class="w-full max-w-xs sm:max-w-sm mx-auto mt-3 rounded-2xl
+            bg-white/60 backdrop-blur-xl border border-amber-600 shadow-[0_4px_20px_rgba(0,0,0,0.05)]
+            px-6 py-5 space-y-4 text-center" disabled/>
+
+            <a href="#invitation"><button 
+            id="openInvitation"
+            class="w-full py-2.5 rounded-2xl bg-amber-800 text-ivory 
+         font-semibold text-sm tracking-wide
+         shadow-md hover:bg-amber-900 active:scale-[0.99] transition text-amber-50">
+            Buka Undangan
+            </button></a>
+        </div>
+
+    </section>
+
+    <section id="invitation" class="relative w-full min-h-screen bg-ivory flex flex-col justify-center items-center px-6 text-center mt-5">
+
+        <!-- Overlay dekor -->
+        <div class="absolute inset-0 bg-gradient-to-b from-caramel/10 to-transparent pointer-events-none"></div>
+
+        <div class="flex flex-col justify-center items-center">
+            <h2 class="text-md font-[Cormorant] mb-1 mt-10 animate-fadeInUp">
+                Assalamu'alaikum Warahmatullah
+            </h2>
+
+            <p class="text-xs text-neutral-700 mb-5 animate-fadeInUp [animation-delay:0.15s]">
+                Dengan Rahmat Allah yang Maha Kuasa <br>InsyaAllah kami akan melangsungkan pernikahan pada:
+            </p>
+        </div>
+
+        <div class="w-full max-w-xs sm:max-w-sm mx-auto rounded-2xl
+            bg-white/60 backdrop-blur-xl border border-amber-300
+            shadow-[0_4px_20px_rgba(0,0,0,0.05)]
+            px-6 py-6 space-y-4 animate-fadeInUp [animation-delay:0.3s]">
+            <h3 class="text-amber-800 font-semibold text-md mb-2">Minggu, 7 Desember 2025</h3>
+            <h3 class="text-amber-900 font-bold text-sm mb-2">16 Rabiul Akhir 1447 H</h3>
+            <p class="text-xs">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
+        </div>
+
+        <div>
+            <img src="./images/wanita.png" alt="Mempelai wanita" class="w-30 max-w-md h-auto mx-auto rounded-full mt-6 mb-5">
+            <h3 class="sacramento-regular font-bold text-3xl">Istiqomah</h3>
+            <p class="text-xs">Putri Bapak MAT SELIH & Almh. Ibu UMMI KULSUM</p>
+            <p class="text-xs">Dusun Morpao, Kalean, Tanah Merah Laok</p>
+        </div>
+
+        <div>
+            <img src="./images/pria.png" alt="Mempelai pria" class="w-30 max-w-md h-auto mx-auto rounded-full mt-6 mb-5">
+            <h3 class="sacramento-regular font-bold text-3xl">Muhammad Faruq</h3>
+            <p class="text-xs">Putra Alm. Bapak MAYAR & Ibu MASRI'A</p>
+            <p class="text-xs">Desa Janteh, Kwanyar</p>
+        </div>
+
+    </section>
+
+    <section id="event" class="relative bg-ivory px-6 py-16">
+
+        <div class="text-center mb-10 mt-5">
+            <h2 class="text-2xl md:text-3xl font-bold text-espresso mb-2 animate-fadeInUp">
+            Detail Acara
+            </h2>
+            <p class="text-amber-700/80 text-sm animate-fadeInUp [animation-delay:0.1s]">
+            Dengan memohon rahmat dan ridho Allah SWT
+            </p>
+            <div class="w-20 h-[2px] bg-amber-500 mx-auto mt-3"></div>
+        </div>
+
+        <div class="max-w-xl mx-auto space-y-6">
+        
+        <!-- Akad -->
+        <div class="border border-amber-400 bg-white/70 backdrop-blur-lg rounded-2xl p-5 shadow-md animate-fadeInUp [animation-delay:0.2s]">
+            <h3 class="text-lg font-semibold text-espresso mb-2"><i class="fa-solid fa-book-quran mr-2"></i> Akad Nikah</h3>
+            <p class="text-sm text-espresso/80">07 Desember 2025 / 13.00 WIB</p>
+            <p class="text-sm text-espresso/80">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
+            <a href="https://maps.app.goo.gl/4oZJS4ohcyziyVoQ7" target="_blank"
+                class="inline-flex items-center gap-2 mt-3 text-amber-800 font-medium hover:underline">
+                <i class="fa-solid fa-location-dot"></i> Lihat Lokasi
+            </a>
+        </div>
+
+        <!-- Resepsi -->
+        <div class="border border-amber-400 bg-white/70 backdrop-blur-lg rounded-2xl p-5 shadow-md animate-fadeInUp [animation-delay:0.3s]">
+            <h3 class="text-lg font-semibold text-espresso mb-2"><i class="fa-solid fa-champagne-glasses mr-2"></i> Resepsi</h3>
+            <p class="text-sm text-espresso/80">07 Desember 2025 / 13.00 - Selesai</p>
+            <p class="text-sm text-espresso/80">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
+            <a href="https://maps.app.goo.gl/4oZJS4ohcyziyVoQ7" target="_blank"
+                class="inline-flex items-center gap-2 mt-3 text-amber-800 font-medium hover:underline">
+                <i class="fa-solid fa-location-dot"></i> Lihat Lokasi
+            </a>
+        </div>
+
+    </div>
+
+    </section>
+
+
+    <section id="countdown" class="relative bg-ivory px-6 py-16 text-center">
+
+    <h2 class="text-2xl md:text-3xl font-bold text-espresso mb-6 animate-fadeInUp">
+        Menuju Hari Bahagia
+    </h2>
+
+    <div id="timer"
+        class="flex justify-center gap-4 md:gap-8 animate-fadeInUp [animation-delay:0.1s]">
+
+        <div class="bg-white/70 backdrop-blur-lg rounded-xl shadow-md px-4 py-3 w-16 md:w-20">
+        <span id="days" class="text-xl font-bold text-espresso">00</span>
+        <p class="text-[11px] text-espresso/70">Hari</p>
+        </div>
+
+        <div class="bg-white/70 backdrop-blur-lg rounded-xl shadow-md px-4 py-3 w-16 md:w-20">
+        <span id="hours" class="text-xl font-bold text-espresso">00</span>
+        <p class="text-[11px] text-espresso/70">Jam</p>
+        </div>
+
+        <div class="bg-white/70 backdrop-blur-lg rounded-xl shadow-md px-4 py-3 w-16 md:w-20">
+        <span id="minutes" class="text-xl font-bold text-espresso">00</span>
+        <p class="text-[11px] text-espresso/70">Menit</p>
+        </div>
+
+        <div class="bg-white/70 backdrop-blur-lg rounded-xl shadow-md px-4 py-3 w-16 md:w-20">
+        <span id="seconds" class="text-xl font-bold text-espresso">00</span>
+        <p class="text-[11px] text-espresso/70">Detik</p>
+        </div>
+
+    </div>
+
+    </section>
+
+    <section id="closing" class="relative bg-ivory px-6 py-20 text-center">
+
+  <!-- Ornamen corner opsional -->
+  <img src="./images/corner.png"
+        class="absolute top-0 left-0 -translate-x-6 -translate-y-6
+               w-32 opacity-5 pointer-events-none select-none">
+
+  <img src="./images/corner.png"
+        class="absolute bottom-0 right-0 translate-x-8 translate-y-10
+               w-40 opacity-5 rotate-180 pointer-events-none select-none">
+
+  <div class="max-w-2xl mx-auto relative z-10 animate-fadeInUp">
+
+    <h2 class="text-2xl md:text-3xl font-bold text-espresso mb-4">
+      Terima Kasih
+    </h2>
+
+    <p class="text-espresso/80 leading-relaxed mb-6 px-4">
+      Merupakan kebahagiaan dan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i
+      berkenan hadir dan memberikan doa restu untuk keberkahan pernikahan kami.
+    </p>
+
+    <p class="text-amber-700 font-medium mb-10">
+      Wassalamu’alaikum Warahmatullahi Wabarakatuh
+    </p>
+
+    <!-- Nama Mempelai -->
+    <h3 class="text-xl font-[Cormorant] text-espresso font-semibold mb-1">
+      Istiqomah &amp; Faruq
+    </h3>
+
+    <p class="text-xs text-espresso/60">
+      07 Desember 2025
+    </p>
+
+    <!-- Garis kecil ornament -->
+    <div class="w-20 h-[2px] bg-amber-500 mx-auto mt-6 animate-fadeLine"></div>
+  </div>
+
+</section>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
