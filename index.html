@@ -15,6 +15,93 @@
 </head>
 
 <body>
+    <section id="dashboard" class="dashboard-section">
+        <div class="dashboard-header">
+            <p class="dashboard-kicker">Dashboard Undangan</p>
+            <h1 class="dashboard-title">Atur detail undangan dan lihat preview secara langsung</h1>
+            <p class="dashboard-subtitle">
+                Masukkan nama pengantin, lokasi, jam acara, dan galeri foto. Setelah terisi, preview undangan akan otomatis diperbarui.
+            </p>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h2 class="dashboard-card-title">Form Detail Acara</h2>
+                <div class="dashboard-form">
+                    <div>
+                        <label for="inputBrideName">Nama Mempelai Wanita</label>
+                        <input id="inputBrideName" type="text" placeholder="Contoh: Istiqomah">
+                    </div>
+                    <div>
+                        <label for="inputGroomName">Nama Mempelai Pria</label>
+                        <input id="inputGroomName" type="text" placeholder="Contoh: Muhammad Faruq">
+                    </div>
+                    <div>
+                        <label for="inputEventDate">Tanggal Acara</label>
+                        <input id="inputEventDate" type="date">
+                    </div>
+                    <div>
+                        <label for="inputEventTime">Jam Acara</label>
+                        <input id="inputEventTime" type="time">
+                    </div>
+                    <div>
+                        <label for="inputEventLocation">Lokasi Acara</label>
+                        <input id="inputEventLocation" type="text" placeholder="Contoh: Kediaman mempelai putri, Dusun Morpao">
+                    </div>
+                    <div>
+                        <label for="inputGallery">Link Foto Galeri (pisahkan dengan enter)</label>
+                        <textarea id="inputGallery" rows="4" placeholder="./images/couple.png\n./images/wanita.png\n./images/pria.png"></textarea>
+                    </div>
+                </div>
+
+                <div class="dashboard-actions">
+                    <a href="#invitation" class="dashboard-button">Lihat Preview Undangan</a>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h2 class="dashboard-card-title">Preview Ringkas</h2>
+                <div class="preview-card">
+                    <div>
+                        <p class="preview-label">Nama Pasangan</p>
+                        <h3 id="previewCouple" class="preview-title">Istiqomah &amp; Faruq</h3>
+                    </div>
+                    <div>
+                        <p class="preview-label">Waktu Acara</p>
+                        <p id="previewTime" class="preview-text">Minggu, 7 Desember 2025 • 13.00 WIB</p>
+                    </div>
+                    <div>
+                        <p class="preview-label">Lokasi</p>
+                        <p id="previewLocation" class="preview-text">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
+                    </div>
+                </div>
+
+                <div class="preview-gallery">
+                    <p class="preview-label">Galeri Foto</p>
+                    <div id="previewGallery" class="preview-grid"></div>
+                </div>
+
+                <div class="dashboard-samples">
+                    <p class="preview-label">Contoh Undangan</p>
+                    <div class="sample-grid">
+                        <button class="sample-card" data-sample="0">
+                            <span class="sample-title">Tema Klasik</span>
+                            <span class="sample-meta">Alya &amp; Reza</span>
+                        </button>
+                        <button class="sample-card" data-sample="1">
+                            <span class="sample-title">Tema Modern</span>
+                            <span class="sample-meta">Dinda &amp; Yoga</span>
+                        </button>
+                        <button class="sample-card" data-sample="2">
+                            <span class="sample-title">Tema Garden</span>
+                            <span class="sample-meta">Salsa &amp; Naufal</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="w-full min-h-screen bg-ivory overflow-hidden flex flex-col justify-center items-center px-6 text-center relative">
 
         <!-- Corner Left-Top -->
@@ -38,12 +125,12 @@
 
         <img src="./images/couple.png" alt="Foto Kartun Pasangan" class="w-full max-w-md h-auto mx-auto rounded-2xl">
         <!-- Nama Pengantin -->
-        <h1 class="text-4xl font-[Cormorant] sacramento-regular mb-1 mt-10 animate-fadeInUp">
+        <h1 id="coupleName" class="text-4xl font-[Cormorant] sacramento-regular mb-1 mt-10 animate-fadeInUp">
             Istiqomah &amp; Faruq
         </h1>
 
         <p class="text-sm text-neutral-700 mb-5 animate-fadeInUp [animation-delay:0.15s]">
-            Akan melangsungkan pernikahan pada <br>7 Desember 2025
+            Akan melangsungkan pernikahan pada <br><span id="eventDateText">7 Desember 2025</span>
         </p>
 
         <div class="w-12 h-1 bg-amber-700/60 mx-auto rounded-full mb-3"></div>
@@ -93,21 +180,21 @@
             bg-white/60 backdrop-blur-xl border border-amber-300
             shadow-[0_4px_20px_rgba(0,0,0,0.05)]
             px-6 py-6 space-y-4 animate-fadeInUp [animation-delay:0.3s]">
-            <h3 class="text-amber-800 font-semibold text-md mb-2">Minggu, 7 Desember 2025</h3>
+            <h3 id="eventDateHeading" class="text-amber-800 font-semibold text-md mb-2">Minggu, 7 Desember 2025</h3>
             <h3 class="text-amber-900 font-bold text-sm mb-2">16 Rabiul Akhir 1447 H</h3>
-            <p class="text-xs">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
+            <p id="eventLocationText" class="text-xs">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
         </div>
 
         <div>
             <img src="./images/wanita.png" alt="Mempelai wanita" class="w-30 max-w-md h-auto mx-auto rounded-full mt-6 mb-5">
-            <h3 class="sacramento-regular font-bold text-3xl">Istiqomah</h3>
+            <h3 id="brideName" class="sacramento-regular font-bold text-3xl">Istiqomah</h3>
             <p class="text-xs">Putri Bapak MAT SELIH & Almh. Ibu UMMI KULSUM</p>
             <p class="text-xs">Dusun Morpao, Kalean, Tanah Merah Laok</p>
         </div>
 
         <div>
             <img src="./images/pria.png" alt="Mempelai pria" class="w-30 max-w-md h-auto mx-auto rounded-full mt-6 mb-5">
-            <h3 class="sacramento-regular font-bold text-3xl">Muhammad Faruq</h3>
+            <h3 id="groomName" class="sacramento-regular font-bold text-3xl">Muhammad Faruq</h3>
             <p class="text-xs">Putra Alm. Bapak MAYAR & Ibu MASRI'A</p>
             <p class="text-xs">Desa Janteh, Kwanyar</p>
         </div>
@@ -131,8 +218,8 @@
         <!-- Akad -->
         <div class="border border-amber-400 bg-white/70 backdrop-blur-lg rounded-2xl p-5 shadow-md animate-fadeInUp [animation-delay:0.2s]">
             <h3 class="text-lg font-semibold text-espresso mb-2"><i class="fa-solid fa-book-quran mr-2"></i> Akad Nikah</h3>
-            <p class="text-sm text-espresso/80">07 Desember 2025 / 13.00 WIB</p>
-            <p class="text-sm text-espresso/80">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
+            <p id="eventTimeText" class="text-sm text-espresso/80">07 Desember 2025 / 13.00 WIB</p>
+            <p id="eventLocationDetail" class="text-sm text-espresso/80">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
             <a href="https://maps.app.goo.gl/4oZJS4ohcyziyVoQ7" target="_blank"
                 class="inline-flex items-center gap-2 mt-3 text-amber-800 font-medium hover:underline">
                 <i class="fa-solid fa-location-dot"></i> Lihat Lokasi
@@ -142,8 +229,8 @@
         <!-- Resepsi -->
         <div class="border border-amber-400 bg-white/70 backdrop-blur-lg rounded-2xl p-5 shadow-md animate-fadeInUp [animation-delay:0.3s]">
             <h3 class="text-lg font-semibold text-espresso mb-2"><i class="fa-solid fa-champagne-glasses mr-2"></i> Resepsi</h3>
-            <p class="text-sm text-espresso/80">07 Desember 2025 / 13.00 - Selesai</p>
-            <p class="text-sm text-espresso/80">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
+            <p id="eventTimeSecondary" class="text-sm text-espresso/80">07 Desember 2025 / 13.00 - Selesai</p>
+            <p id="eventLocationSecondary" class="text-sm text-espresso/80">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
             <a href="https://maps.app.goo.gl/4oZJS4ohcyziyVoQ7" target="_blank"
                 class="inline-flex items-center gap-2 mt-3 text-amber-800 font-medium hover:underline">
                 <i class="fa-solid fa-location-dot"></i> Lihat Lokasi
@@ -154,6 +241,18 @@
 
     </section>
 
+    <section id="gallery" class="relative bg-ivory px-6 py-16">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-espresso mb-2 animate-fadeInUp">
+                Galeri Foto
+            </h2>
+            <p class="text-amber-700/80 text-sm animate-fadeInUp [animation-delay:0.1s]">
+                Momen manis yang akan selalu dikenang
+            </p>
+            <div class="w-20 h-[2px] bg-amber-500 mx-auto mt-3"></div>
+        </div>
+        <div id="galleryGrid" class="gallery-grid"></div>
+    </section>
 
     <section id="countdown" class="relative bg-ivory px-6 py-16 text-center">
 
@@ -215,11 +314,11 @@
     </p>
 
     <!-- Nama Mempelai -->
-    <h3 class="text-xl font-[Cormorant] text-espresso font-semibold mb-1">
+    <h3 id="closingCouple" class="text-xl font-[Cormorant] text-espresso font-semibold mb-1">
       Istiqomah &amp; Faruq
     </h3>
 
-    <p class="text-xs text-espresso/60">
+    <p id="closingDate" class="text-xs text-espresso/60">
       07 Desember 2025
     </p>
 
