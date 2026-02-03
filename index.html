@@ -15,6 +15,71 @@
 </head>
 
 <body>
+    <section id="dashboard" class="w-full bg-ivory px-6 py-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold text-espresso mb-2">Dashboard Undangan</h1>
+                <p class="text-sm text-amber-700/80">Isi detail undangan, lalu lihat preview secara langsung.</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <form id="invitationForm" class="dashboard-card space-y-4">
+                    <div>
+                        <label class="dashboard-label" for="coupleName">Nama Pengantin</label>
+                        <input id="coupleName" type="text" class="dashboard-input" value="Istiqomah & Faruq">
+                    </div>
+                    <div class="dashboard-split">
+                        <div>
+                            <label class="dashboard-label" for="brideName">Nama Mempelai Wanita</label>
+                            <input id="brideName" type="text" class="dashboard-input" value="Istiqomah">
+                        </div>
+                        <div>
+                            <label class="dashboard-label" for="groomName">Nama Mempelai Pria</label>
+                            <input id="groomName" type="text" class="dashboard-input" value="Muhammad Faruq">
+                        </div>
+                    </div>
+                    <div class="dashboard-split">
+                        <div>
+                            <label class="dashboard-label" for="eventDate">Tanggal Acara</label>
+                            <input id="eventDate" type="text" class="dashboard-input" value="7 Desember 2025">
+                        </div>
+                        <div>
+                            <label class="dashboard-label" for="eventTime">Jam Acara</label>
+                            <input id="eventTime" type="text" class="dashboard-input" value="13.00 WIB">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="dashboard-label" for="eventVenue">Tempat Acara</label>
+                        <input id="eventVenue" type="text" class="dashboard-input" value="Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok">
+                    </div>
+                    <div>
+                        <label class="dashboard-label" for="galleryUrls">Foto Galeri (pisahkan dengan baris baru atau koma)</label>
+                        <textarea id="galleryUrls" rows="4" class="dashboard-input">./images/couple1.jpeg
+./images/couple2.jpeg
+./images/couple.png</textarea>
+                    </div>
+                    <button type="button" id="applyChanges" class="dashboard-button">Terapkan ke Undangan</button>
+                </form>
+
+                <div class="dashboard-card">
+                    <h2 class="text-lg font-semibold text-espresso mb-4">Preview Undangan</h2>
+                    <div class="preview-card">
+                        <p class="preview-label">Nama Pengantin</p>
+                        <h3 class="preview-title" data-field="coupleName">Istiqomah &amp; Faruq</h3>
+                        <p class="preview-meta"><span data-field="eventDate">7 Desember 2025</span> · <span data-field="eventTime">13.00 WIB</span></p>
+                        <p class="preview-venue" data-field="eventVenue">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
+                        <div class="preview-gallery" id="previewGallery"></div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h3 class="text-sm font-semibold text-espresso mb-3">Contoh Undangan</h3>
+                        <div class="example-grid" id="exampleGrid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="w-full min-h-screen bg-ivory overflow-hidden flex flex-col justify-center items-center px-6 text-center relative">
 
         <!-- Corner Left-Top -->
@@ -38,12 +103,12 @@
 
         <img src="./images/couple.png" alt="Foto Kartun Pasangan" class="w-full max-w-md h-auto mx-auto rounded-2xl">
         <!-- Nama Pengantin -->
-        <h1 class="text-4xl font-[Cormorant] sacramento-regular mb-1 mt-10 animate-fadeInUp">
+        <h1 class="text-4xl font-[Cormorant] sacramento-regular mb-1 mt-10 animate-fadeInUp" data-field="coupleName">
             Istiqomah &amp; Faruq
         </h1>
 
         <p class="text-sm text-neutral-700 mb-5 animate-fadeInUp [animation-delay:0.15s]">
-            Akan melangsungkan pernikahan pada <br>7 Desember 2025
+            Akan melangsungkan pernikahan pada <br><span data-field="eventDate">7 Desember 2025</span>
         </p>
 
         <div class="w-12 h-1 bg-amber-700/60 mx-auto rounded-full mb-3"></div>
@@ -93,21 +158,21 @@
             bg-white/60 backdrop-blur-xl border border-amber-300
             shadow-[0_4px_20px_rgba(0,0,0,0.05)]
             px-6 py-6 space-y-4 animate-fadeInUp [animation-delay:0.3s]">
-            <h3 class="text-amber-800 font-semibold text-md mb-2">Minggu, 7 Desember 2025</h3>
+            <h3 class="text-amber-800 font-semibold text-md mb-2"><span data-field="eventDate">7 Desember 2025</span></h3>
             <h3 class="text-amber-900 font-bold text-sm mb-2">16 Rabiul Akhir 1447 H</h3>
-            <p class="text-xs">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
+            <p class="text-xs" data-field="eventVenue">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
         </div>
 
         <div>
             <img src="./images/wanita.png" alt="Mempelai wanita" class="w-30 max-w-md h-auto mx-auto rounded-full mt-6 mb-5">
-            <h3 class="sacramento-regular font-bold text-3xl">Istiqomah</h3>
+            <h3 class="sacramento-regular font-bold text-3xl" data-field="brideName">Istiqomah</h3>
             <p class="text-xs">Putri Bapak MAT SELIH & Almh. Ibu UMMI KULSUM</p>
             <p class="text-xs">Dusun Morpao, Kalean, Tanah Merah Laok</p>
         </div>
 
         <div>
             <img src="./images/pria.png" alt="Mempelai pria" class="w-30 max-w-md h-auto mx-auto rounded-full mt-6 mb-5">
-            <h3 class="sacramento-regular font-bold text-3xl">Muhammad Faruq</h3>
+            <h3 class="sacramento-regular font-bold text-3xl" data-field="groomName">Muhammad Faruq</h3>
             <p class="text-xs">Putra Alm. Bapak MAYAR & Ibu MASRI'A</p>
             <p class="text-xs">Desa Janteh, Kwanyar</p>
         </div>
@@ -131,8 +196,8 @@
         <!-- Akad -->
         <div class="border border-amber-400 bg-white/70 backdrop-blur-lg rounded-2xl p-5 shadow-md animate-fadeInUp [animation-delay:0.2s]">
             <h3 class="text-lg font-semibold text-espresso mb-2"><i class="fa-solid fa-book-quran mr-2"></i> Akad Nikah</h3>
-            <p class="text-sm text-espresso/80">07 Desember 2025 / 13.00 WIB</p>
-            <p class="text-sm text-espresso/80">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
+            <p class="text-sm text-espresso/80"><span data-field="eventDate">07 Desember 2025</span> / <span data-field="eventTime">13.00 WIB</span></p>
+            <p class="text-sm text-espresso/80" data-field="eventVenue">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
             <a href="https://maps.app.goo.gl/4oZJS4ohcyziyVoQ7" target="_blank"
                 class="inline-flex items-center gap-2 mt-3 text-amber-800 font-medium hover:underline">
                 <i class="fa-solid fa-location-dot"></i> Lihat Lokasi
@@ -142,8 +207,8 @@
         <!-- Resepsi -->
         <div class="border border-amber-400 bg-white/70 backdrop-blur-lg rounded-2xl p-5 shadow-md animate-fadeInUp [animation-delay:0.3s]">
             <h3 class="text-lg font-semibold text-espresso mb-2"><i class="fa-solid fa-champagne-glasses mr-2"></i> Resepsi</h3>
-            <p class="text-sm text-espresso/80">07 Desember 2025 / 13.00 - Selesai</p>
-            <p class="text-sm text-espresso/80">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
+            <p class="text-sm text-espresso/80"><span data-field="eventDate">07 Desember 2025</span> / <span data-field="eventTime">13.00 WIB</span> - Selesai</p>
+            <p class="text-sm text-espresso/80" data-field="eventVenue">Kediaman mempelai putri, Dusun Morpao, Kalean, Tanah Merah Laok</p>
             <a href="https://maps.app.goo.gl/4oZJS4ohcyziyVoQ7" target="_blank"
                 class="inline-flex items-center gap-2 mt-3 text-amber-800 font-medium hover:underline">
                 <i class="fa-solid fa-location-dot"></i> Lihat Lokasi
@@ -188,6 +253,19 @@
 
     </section>
 
+    <section id="gallery" class="relative bg-ivory px-6 py-16">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-espresso mb-2">Galeri Foto</h2>
+            <p class="text-amber-700/80 text-sm">Beberapa momen kebahagiaan yang ingin kami bagikan.</p>
+            <div class="w-20 h-[2px] bg-amber-500 mx-auto mt-3"></div>
+        </div>
+        <div id="galleryGrid" class="gallery-grid">
+            <img src="./images/couple1.jpeg" alt="Galeri 1" class="gallery-item">
+            <img src="./images/couple2.jpeg" alt="Galeri 2" class="gallery-item">
+            <img src="./images/couple.png" alt="Galeri 3" class="gallery-item">
+        </div>
+    </section>
+
     <section id="closing" class="relative bg-ivory px-6 py-20 text-center">
 
   <!-- Ornamen corner opsional -->
@@ -215,12 +293,12 @@
     </p>
 
     <!-- Nama Mempelai -->
-    <h3 class="text-xl font-[Cormorant] text-espresso font-semibold mb-1">
+    <h3 class="text-xl font-[Cormorant] text-espresso font-semibold mb-1" data-field="coupleName">
       Istiqomah &amp; Faruq
     </h3>
 
     <p class="text-xs text-espresso/60">
-      07 Desember 2025
+      <span data-field="eventDate">07 Desember 2025</span>
     </p>
 
     <!-- Garis kecil ornament -->
